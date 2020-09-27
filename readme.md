@@ -38,26 +38,26 @@ mvn spring-boot:run
 
 go to browser and enter The application will run in ``http://localhost:8080/home`` and browse other stuff.
 
-#####Home page with all public posts:
+##### Home page with all public posts:
 ![Home page with all public posts](readme-images/home.JPG)
 
-#####Sign up page:
+##### Sign up page:
 ![Sign up page](readme-images/signup.JPG)
 
-#####Login page:
+##### Login page:
 ![Login page](readme-images/login.JPG)
 
-#####All user posts:
+##### All user posts:
 ![All user posts](readme-images/allposts.JPG)
 
-#####Logged user posts:
+##### Logged user posts:
 ![Logged user posts](readme-images/userposts.JPG)
 
-#####Add new post:
+##### Add new post:
 ![Add new post](readme-images/addpost.JPG)
 
-#####Edit post:
+##### Edit post:
 ![Edit post](readme-images/editpost.JPG)
 
-#####Logout:
+##### Logout:
 ![Logout](readme-images/logout.JPG)
