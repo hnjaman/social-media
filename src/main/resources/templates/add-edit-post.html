@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+    <div class="container my-5">
+        <form role="form" th:action="@{/user/logout}" th:method="post">
+            <div class="col-md-6">
+                <input type="submit" class="btn btn-outline-danger" value="LOGOUT">
+            </div>
+        </form>
+
+        <p class="my-5">
+            <a href="/posts" class="btn btn-primary">
+                <i class="fas fa-user-plus ml-2"> All Posts </i></a>
+        </p>
+
+        <p class="my-5">
+            <a href="/user" class="btn btn-primary">
+                <i class="fas fa-user-plus ml-2"> Your Posts </i></a>
+        </p>
+
+        <h3> Add New Post</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{/createPost}" th:object="${post}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="status" class="col-form-label">Status</label>
+                                <input type="text" th:field="*{status}" class="form-control"
+                                       id="status" placeholder="Whats on your mind" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <input type="radio" id="public" name="public" value="0" th:field="*{privacy}">
+                                <label for="public" class="col-form-label">Public</label>
+
+                                <input type="radio" id="private" name="private" value="1" th:field="*{privacy}">
+                                <label for="private" class="col-form-label">Private</label>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <lable for="pinStatus">Check for Pin post</lable>
+                                <input type="checkbox" id="pinStatus" name="pinStatus" class="form-control" th:field="*{pinStatus}">
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <lable>Check In</lable>
+                                <select th:field="*{checkIn}">
+                                    <option th:value="'Sylhet'" th:text="Sylhet"></option>
+                                    <option th:value="'Bandarban'" th:text="Bandarban"></option>
+                                    <option th:value="'Khulna'" th:text="Khulna"></option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value="Post">
+                            </div>
+
+                            <input type="hidden" id="postId" th:field="*{postId}">
+    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

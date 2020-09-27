@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Spring Boot User Authentication</title>
+</head>
+<body>
+<form role="form" th:action="@{/editPost}" th:method="post" th:object="${postRequest}">
+    <lable>Status</lable>
+    <input type="text" id="status" name="status" th:field="*{status}">
+
+    <br>
+    <lable>Privacy mode</lable>
+    <br>
+    <input type="radio" id="public" name="public" value="0" th:field="*{privacy}">
+    <label for="public">Public</label>
+
+    <input type="radio" id="Private" name="Private" value="1" th:field="*{privacy}">
+    <label class="custom-control-label" for="Private">Private</label>
+
+    <br>
+    <lable>Check for Pin post</lable>
+    <input type="checkbox" id="pinStatus" name="pinStatus" th:field="*{pinStatus}">
+
+    <br>
+    <select th:field="*{checkIn}">
+        <option th:value="'Sylhet'" th:text="Sylhet"></option>
+        <option th:value="'Bandarban'" th:text="Bandarban"></option>
+        <option th:value="'Khulna'" th:text="Khulna"></option>
+    </select>
+    <br>
+    <button type="submit">Post</button>
+</form>
+</body>
+</html>
